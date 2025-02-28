@@ -118,7 +118,7 @@ If the parameter contains no value, use an empty string as its URI encoded value
 
 Given the query string:
 
-```http request
+```
 user_id=1&company_id=4&sort=name,created_at&limit=5&activeOnly
 ```
 
@@ -134,7 +134,7 @@ UriEncode("user_id")+"="+UriEncode("1")
 
 Which gives:
 
-```http request
+```
 activeOnly=&company_id=4&limit=5&sort=name%2Ccreated_at&user_id=1
 ```
 
