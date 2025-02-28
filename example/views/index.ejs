@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Apps signature examples</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 1rem;
+        }
+
+        dl {
+            padding: 0.5em;
+        }
+
+        dt {
+            float: left;
+            clear: left;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        dt::after {
+            content: ":";
+        }
+
+        dd {
+            margin: 0 0 0 160px;
+            padding: 0 0 0.5em 0;
+        }
+
+        .result {
+            background-color: aquamarine;
+            padding: 1rem;
+            border-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Apps signature examples</h1>
+
+<% if (called) { %>
+    <div class="result">
+        <h2>Example called</h2>
+        <dl>
+            <dt>Example</dt><dd><%= example %></dd>
+            <dt>Timestamp</dt><dd><%= timestamp %></dd>
+            <dt>Response status</dt><dd><%= responseStatus %></dd>
+        </dl>
+    </div>
+<% } %>
+
+<div>
+    <h2>Simulate call to install endpoint</h2>
+    <p>
+        This example simulates calling a webhook endpoint. Clicking <b>send</b> below will call the
+        <code>/callinstall</code> route in <code>index.js</code>, which will generate a request and signature
+        and call the <code>/install</code> endpoint that will verify the signature.
+    </p>
+    <p>
+        Check the server console for detailed logging of what is happening and look at the code in <code>index.js</code>
+        for details on implementation.
+    </p>
+    <form action="/callinstall" method="post">
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<div>
+    <h2>Play back recorded install call</h2>
+    <p>
+        This example replays a recorded call from Help Scouts test environment to the <code>/install</code> endpoint.
+        <br>
+        It also includes query params to help make those work if needed.
+    </p>
+    <p>
+        Check the server console for detailed logging of what is happening and look at the code in <code>index.js</code>
+        for details on implementation.
+    </p>
+    <form action="/playrecordedinstallcall" method="post">
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+</body>
+</html>
