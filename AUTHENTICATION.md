@@ -6,7 +6,7 @@ The Platform API uses an authentication method based on the
 This is used for
 
 - all Platform API calls to application endpoints, like the install/uninstall endpoints.
-- calls to Platform API from external (not available currently)
+- calls to Platform API from external
 
 ## Authentication key pair
 
